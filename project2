@@ -1,0 +1,174 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Person {
+	public String name;
+	public String email;
+	public String date;
+	public String vehicle;
+	public String timein;
+	public String timeout;
+	public ArrayList<String> list = new ArrayList<String>();
+		
+	public static void main(String args[]) {
+	Scanner input = new Scanner(System.in);
+    
+    System.out.println("1.Check in");
+    System.out.println("2.Check out"); 
+    System.out.println("3.Display all friends");
+    System.out.println("4.Exit Program");
+    
+    int selection = input.nextInt();
+    
+    Person bornList = new Person();
+    
+    int count = 0;
+    
+    while (selection != 4)
+    {
+        int number = 0;
+      
+        if (selection == 1)
+        {
+            System.out.printf("What is the name: ");
+            String name = input.next();
+            System.out.println("Enter email address: ");
+            String email = input.next();
+            System.out.println("Enter the date");
+            String date = input.next(); 
+            System.out.printf("Do you have a vehicle ");
+            String vehicle = input.next();
+            System.out.println("What is the time in ");
+            String timein = input.next();
+            System.out.println("What is the time out(enter 0 if not yet checking out)");
+            String timeout = input.next(); 
+            bornList.setlist(name, email, date, vehicle, timein, timeout);  
+            bornList.checkIn(); // adds the friend to the array list
+            count++;
+        }}
+	    if (selection == 1)
+	    {
+	        System.out.printf("What is the name: ");
+	        String name = input.next();
+	        System.out.println("Enter email address: ");
+	        String email = input.next();
+	        System.out.println("Enter the date");
+	        String date = input.next(); 
+	        System.out.printf("Do you have a vehicle ");
+	        String vehicle = input.next();
+	        System.out.println("What is the time in ");
+	        String timein = input.next();
+	        System.out.println("What is the time out(enter 0 if not yet checking out)");
+	        String timeout = input.next(); 
+	        bornList.setlist(name, email, date, vehicle, timein, timeout);  
+	        bornList.checkOut(); // adds the friend to the array list
+	    }
+		if (selection == 3)
+	    {
+	      
+	         //System.out.println(bornList.toString());
+	
+	        for(int i= 0; i < 1;i++)
+	        {
+	        System.out.println(bornList.list);
+	        }}
+
+	    System.out.println("1.Check in");
+	    System.out.println("2.Check out"); 
+	    System.out.println("3.Display all friends");
+	    System.out.println("4.Exit Program");
+        selection = input.nextInt();
+	    }
+	public void setlist(String name, String email, String date, String vehicle, String timein, String timeout) {
+		setName(name);
+	    setEmail(email);
+        setDate(date);
+        setVehicle(vehicle);
+        setTimein(timein);
+        setTimeout(timeout);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getTimein() {
+		return timein;
+	}
+
+	public void setTimein(String timein) {
+		this.timein = timein;
+	}
+
+	public String getTimeout() {
+		return timeout;
+	}
+
+	public void setTimeout(String timeout) {
+		this.timeout = timeout;
+	}
+
+	public ArrayList<String> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<String> list) {
+		this.list = list;
+	}
+		
+	public void checkIn()
+    {   
+        list.add(name);
+        list.add(email);
+        list.add(date);
+        list.add(vehicle);
+        list.add(timein);
+	    list.add(timeout);
+    }
+	    
+
+    public void checkOut()
+    {
+        list.remove(name);
+        list.remove(email);
+        list.remove(date);
+	      list.remove(vehicle);
+        list.remove(timein);
+        list.remove(timeout);
+    }
+	    
+    @Override
+    public String toString()
+    {
+      return String.format( "Name: %s\nEmail: %s\nDate: %s\nVehicle: %s\\nTimein: %s\\nTimeout"
+    		  , name, email, date, vehicle, timein, timeout);
+    }//end toString()
+}
