@@ -21,6 +21,16 @@ public class Person {
     int selection = input.nextInt();
     
     Person bornList = new Person();
+    //bornList.setList("barezi julien", "b.julien@alustudent.com", "no", "12:09", "0");
+    
+    String name1 = "Barezi Julien";
+    String email1 = "b.julien@alustudent.com";
+    String date1 = "2000-01-12";
+    String vehicle1 = "No";
+    String timein1 = "12:07";
+    String timeout1 = "0"; 
+    bornList.setlist(name1, email1, date1, vehicle1, timein1, timeout1);  
+    bornList.checkIn(); 
     
     int count = 0;
     
@@ -44,9 +54,9 @@ public class Person {
             String timeout = input.next(); 
             bornList.setlist(name, email, date, vehicle, timein, timeout);  
             bornList.checkIn(); // adds the friend to the array list
-            count++;
-        }}
-	    if (selection == 1)
+            System.out.println(bornList);
+        }
+    	else if (selection == 2)
 	    {
 	        System.out.printf("What is the name: ");
 	        String name = input.next();
@@ -63,14 +73,14 @@ public class Person {
 	        bornList.setlist(name, email, date, vehicle, timein, timeout);  
 	        bornList.checkOut(); // adds the friend to the array list
 	    }
-		if (selection == 3)
+    	else if (selection == 3)
 	    {
 	      
 	         //System.out.println(bornList.toString());
 	
 	        for(int i= 0; i < 1;i++)
 	        {
-	        System.out.println(bornList.list);
+	        System.out.println(bornList);
 	        }}
 
 	    System.out.println("1.Check in");
@@ -78,6 +88,7 @@ public class Person {
 	    System.out.println("3.Display all friends");
 	    System.out.println("4.Exit Program");
         selection = input.nextInt();
+    }
 	    }
 	public void setlist(String name, String email, String date, String vehicle, String timein, String timeout) {
 		setName(name);
@@ -160,7 +171,7 @@ public class Person {
         list.remove(name);
         list.remove(email);
         list.remove(date);
-	      list.remove(vehicle);
+	    list.remove(vehicle);
         list.remove(timein);
         list.remove(timeout);
     }
@@ -168,7 +179,7 @@ public class Person {
     @Override
     public String toString()
     {
-      return String.format( "Name: %s\nEmail: %s\nDate: %s\nVehicle: %s\\nTimein: %s\\nTimeout"
+      return String.format( "Name: %s\nEmail: %s\nDate: %s\nVehicle: %s\nTimein: %s\nTimeout"
     		  , name, email, date, vehicle, timein, timeout);
     }//end toString()
 }
