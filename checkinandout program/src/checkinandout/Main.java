@@ -26,12 +26,12 @@ public class Main {
 		Staff staff = new Staff();
 		Visitors visitor = new Visitors();
 		
-		Student student1 = new Student("100" ,"Julien", "b.julien@alustudent.com", newdate, newvehicle, newtime);
-		Student student2 = new Student("200", "Lando", "g.landelin@alustudent.com", newdate, newvehicle, newtime);
-		Staff staff1 = new Staff("300", "Brian", "g.brian@alustudent.com", "facilitator", newdate, newvehicle, newtime);
-		Staff staff2 = new Staff("400", "Bruce", "u.bruce@alustudent.com", "facilitator", newdate, newvehicle, newtime);
-		Visitors visitor1 = new Visitors("20", "Nelson", "k.nelson@gmail.com", "culture event", newdate, newvehicle, newtime);
-		Visitors visitor2 = new Visitors("30", "Linda", "i.linda@gmail.com", "application", newdate, newvehicle, newtime);
+		Student student1 = new Student("100" ,"julien", "b.julien@alustudent.com", newdate, newvehicle, newtime);
+		Student student2 = new Student("200", "lando", "g.landelin@alustudent.com", newdate, newvehicle, newtime);
+		Staff staff1 = new Staff("300", "brian", "g.brian@alustudent.com", "facilitator", newdate, newvehicle, newtime);
+		Staff staff2 = new Staff("400", "bruce", "u.bruce@alustudent.com", "facilitator", newdate, newvehicle, newtime);
+		Visitors visitor1 = new Visitors("20", "nelson", "k.nelson@gmail.com", "culture event", newdate, newvehicle, newtime);
+		Visitors visitor2 = new Visitors("30", "linda", "i.linda@gmail.com", "application", newdate, newvehicle, newtime);
 		
 		ArrayList<String> studentdata1 = student1.studentcheckin();
 		ArrayList<String> studentdata2 = student2.studentcheckin();
